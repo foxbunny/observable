@@ -1,0 +1,42 @@
+{
+  "name" : "observable",
+  "description" : "Simple lightweight observable values",
+  "homepage" : "https://github.com/foxbunny/observable",
+  "keywords" : ["observable", "data-binding"],
+  "author" : "Branko Vukelic <branko@brankovukelic.com>",
+  "bugs": {
+    "url": "https://github.com/foxbunny/observable/issues",
+    "email": "branko@brankovukelic.com"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/foxbunny/observable/blob/master/LICENSE"
+  },
+  "dependencies" : {
+  },
+  "devDependencies": {
+    "volo": "*",
+    "coffee-script": "1.6.3",
+    "dahelpers": ">=0.2.1",
+    "mocha": "*",
+    "chai": "*"
+  },
+  "main": "",
+  "volo": {
+    "dependencies": {
+    },
+    "ignore": [
+      "package.json",
+      ".gitignore",
+      "CHANGES.mkd",
+      "README.mkd",
+      "LICENSE",
+      "volofile",
+      "tests",
+      "tools",
+      "doc",
+      "src"
+    ]
+  },
+  "version" : "0.0.1"
+}

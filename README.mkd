@@ -1,0 +1,48 @@
+# Observable values for JavaScript
+
+This library provides a simplistic support for observable values (and thus
+means for performing data-binding). 
+
+This code has not been tested yet. There are probably bugs in it.
+
+## Motivation
+
+Althought many frameworks provide the same functionality in many different
+forms, they are usually fully-featured and not very lightweight. Using them may
+imply pulling in most or all of the framework as well (e.g., BackboneJS). Even
+if you are already using such a framework, you may still have situation where
+you need data-binding without everything else that usually comes with it.
+
+The `Observable` constructor fulfills this role.
+
+## Installation
+
+### NodeJS
+
+This module is currently not published on NPM. You can install it from a
+directory containing the source code, or you can simply copy the
+`observable.js` file into your project.
+
+### Browsers
+
+You can use this module either stand-alone using `<script>` tags, or you can
+use it as an AMD loader with a compatible module loader such as RequireJS.
+
+### volo
+
+You can install this module with volo normally:
+
+    volo add foxbunny/observable
+
+## Basic usage
+
+    var observable = new Observable(12);
+    var observer = function (newVal, oldVal) {
+       console.log(oldVal + '->' + newVal);
+    }
+    observable.watch(observer)
+    observable.set(9)  // logs "12 -> 9"
+    observable.set(9)  // doesn't do anything because it's the same value
+    observable.get()   // returns 9
+
+

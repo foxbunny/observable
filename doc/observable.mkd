@@ -1,0 +1,50 @@
+# Basic observable values implementation <a name="basic-observable-values-implementation"></a>
+
+This is a lightweight alternative to Backbone models for use when the full
+model is too cumbersome.
+
+## `Observable(initial)` <a name="observable-initial"></a>
+
+Constructor for creating observable values.
+
+The `initial` value is the inital height of the object.
+
+Example:
+
+    var observer;
+    var observable;
+
+
+    observer = function (newVal, oldVal) {
+      console.log('Value has changed from ' + oldVal + ' to ' + newVal);
+    };
+
+
+    observable = new Observable(12);
+    observable.watch(observer);
+    observable.set(9);
+
+
+    // logs: "Value has changed from 12 to 9"
+
+
+## `Observable.prototype.set(v)` <a name="observable-prototype-set-v"></a>
+
+Sets the value of the observable to `v` and  triggers observers.
+
+Note that this method will not do anything if the value to be set is the same
+value as the current one.
+
+## `Observable.prototype.get()` <a name="observable-prototype-get"></a>
+
+Returns the current value.
+
+### `Observer.prototype.watch(callback) <a name="observer-prototype-watch-callback"></a>
+
+Binds a `callback` function to be executed whenever the value changes changes.
+The function has the following signature:
+
+    function (newVal, oldVal) { }
+
+
+The callback function is bound to the observable object so you can
